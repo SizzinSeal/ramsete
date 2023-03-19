@@ -17,6 +17,9 @@ namespace lemlib {
             float x;
             float y;
             float theta;
+            float linearVel;
+            float angularVel;
+            float pathDistance;
             /**
              * @brief Create a new pose
              * 
