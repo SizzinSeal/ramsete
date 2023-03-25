@@ -66,6 +66,34 @@ void ramsete(lemlib::Pose targetPose, lemlib::Pose currentPose, float targetAngu
 }
 
 
-void initialize() {
+void MoveToPath(){
 
 }
+
+
+void initialize() {
+	pros::lcd::initialize();
+    std::string text;
+    std::ifstream file("index.txt");
+    std::map<
+
+    while (std::getline(file, text)){
+        Point one = parseString(text);
+        list.push_back(one);
+    }
+
+    // Close the file
+    file.close();
+    desPath1.points = list;
+}
+
+void autonomous() {
+
+}
+
+void opcontrol() {
+
+
+}
+
+

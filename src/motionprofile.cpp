@@ -1,4 +1,4 @@
-#include "include/motionprofile.h"
+#include "motionprofile.h"
 
 float GetPathLength(std::vector<lemlib::Pose>* p) {
   //calculate path length and each points distance
