@@ -98,8 +98,6 @@ void MotionProfile::CalculateVelocities() {
 }
 
 
-
-
 MotionProfile::MotionProfile(std::vector<lemlib::Pose>* path, float velConstraint, float accel, float deaccel, float startingTheta) {
   this->path = path;
   this->velConstraint = velConstraint;
@@ -111,5 +109,17 @@ MotionProfile::MotionProfile(std::vector<lemlib::Pose>* path, float velConstrain
   CalculateVelocities();
 }
 
-
+/**
+ * @brief Overlays the given path with a motion profile **Modifies original variable**
+ *
+ * @param pPath pointer to the path object with velocities
+ * @param velConstraint maximum velocity
+ * @param accel acceleration value
+ * @param deaccel deacceleration value
+ * @param startingTheta starting theta value
+ * 
+ */
+void OverlayPathVelocities(std::vector<lemlib::Pose>* pPath, float velConstraint, float accel, float deaccel, float startingTheta){
+  MotionProfile p(pPath, velConstraint, accel, deaccel, startingTheta);
+}
 
